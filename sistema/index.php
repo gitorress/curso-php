@@ -1,91 +1,41 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>site gii</title>
+</head>
+<body>
+  <nav class="navbar navbar-light" style="background-color: hsl(210, 9%, 96%);">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="imagens/images.png" alt="" width="200" height="40" class="d-inline-block align-text-top">
+              </a>
 
-    //CHAMANDO CONEXAO
-    include 'conexao.php';
+           <div class="col-12 caixa_titulo " style="background-color: white;">
+                  SANTA CASA
+          </div>
+   
+    <div class="container" style="background-color: BLUE;  width: 500px; height: 300px;background-color: cornflowerblue;
+    margin-top: 10px;">
+       <div class="col-12 caixa_titulo " style="background-color: blue;">
+                  faça seu login
+          </div>
 
-    //COLETANDO AS INFORMACOES DO POST
-    //@ PARA IGNORAR ERRO CASO O POST NAO SEJA ENVIADO
-    @$cd_convenio = $_POST['frm_cd_convenio'];
-
-?>
-
-<form method="POST" action="index.php">
-
-    Código do convênio: <br>
-    <input type="number" name="frm_cd_convenio">
-
-    <button type="submit"> Enviar</button>
-
-</form>
-
-<?php 
-
-    echo 'Convenio selecionado: ' . $cd_convenio . '<br><br>';
-
-    //BUSCANDO DADOS DO CONVENIO
-    $consulta_convenio = "SELECT * FROM 
-    hospital.convenio
-    WHERE cd_convenio = $cd_convenio";
-
-    //EXECUTANDO COMANDO NO BANCO
-    $resultado = mysqli_query($conexao, $consulta_convenio);
-
-    //APENAS PARA O COMANDO SELECT
-    //CRIANDO ARRAY(TABELA) COM AS INFORMACOES DA CONSULTA
-    $linha = mysqli_fetch_array($resultado);
-
-    //EXIBINDO INFORMACOES
-    //echo $linha['cd_convenio'];
-    //echo ' | ' . $linha['nm_convenio'];
-    //echo ' | ' . $linha['cooparticipacao'];
-
-?>
-
-
-<table>
-    <!--PRIMEIRA LINHA TITULO TH-->
-    <tr>
-        <th>Código</th><th>Nome</th><th>Cooparticipacao (%)</th>
-    </tr>
-    <!--SEGUNDA LINHA TITULO TD-->
-    <tr>
-        <td><?php echo $linha['cd_convenio']; ?></td>
-        <td><?php echo $linha['nm_convenio']; ?></td>
-        <td><?php echo $linha['cooparticipacao']; ?></td>
-    </tr>
-</table>
-
-<style>
-
-    table{
-        border-spacing: 5px;
-    }
-
-    th{
-        border: solid 1px black;
-        text-align: center;
-        background-color: lightblue;
-        padding: 5px;
-    }
-
-    td{
-        border: solid 1px black;
-        text-align: center;
-        padding: 5px;
-    }
-
-</style>
-
-
-<table>
-    <tr>
-        <th>titulo 01</th>
-        <th>titulo 02</th>
-    </tr>
-    <tr>
-        <td>CONTEUDO 01</td>
-        <td><?php echo $linha['nm_convenio']; ?></td>
-    </tr>
-</table>
-
-
+       
+    
+       <form method="POST" action="enviar_formulario.php">
+           <input type="text" name="frm_nome" style="justyci" placeholder="Nome">
+           <br><br>
+           <input type="number" name="frm_email" placeholder="CPF:">
+           <br><br>
+           <input type="text" name="frm_nome" placeholder="Login:">
+           <br><br>
+           <input type="number" name="frm_senha" placeholder="Senha:">
+           
+           
+           </br></br><button type="submit">Enviar</button>
+       <form>
+   <div>   
+</body>
+</html>
