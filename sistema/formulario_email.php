@@ -12,10 +12,10 @@
     <img src="/Sem Título-1.png" alt="" class="img">
     <form action="enviar_email.php" class="box">
       <h1 class="title">Formulário</h1>
-      <label for="codigo do livro">Codigo do Livro:</label>
-      <input type="number" id="codigo do livro" name="codigo do livro">
-      <label for="autor">Autor:</label>
-      <input type="text" id="autor" name="autor">
+      <label for="cep">Cep:</label>
+      <input type="number" id="cep" name="cep">
+      <label for="estado">estado:</label>
+      <input type="text" id="estado" name="estado">
 
       <label for="senha">Senha</label>
       <input type="password" id="senha" name="senha">
